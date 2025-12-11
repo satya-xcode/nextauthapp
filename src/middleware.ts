@@ -46,5 +46,7 @@ export const config = {
     "/marketting/:path*",
     "/api/admin/:path*",
     "/api/marketing/:path*",
+    // Exclude NextAuth API routes
+    "/((?!api/auth|_next/static|_next/image|favicon.ico).*)",
   ],
 };

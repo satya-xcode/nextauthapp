@@ -51,7 +51,7 @@ export const authOptions: NextAuthOptions = {
           };
         } catch (error) {
           console.error("Auth error:", error);
-          return null;
+          throw new Error("Authentication failed");
         }
       },
     }),
@@ -76,7 +76,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: "/auth/signin",
-    error: "/auth/error",
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
