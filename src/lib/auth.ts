@@ -3,7 +3,15 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/User";
 import { connectDB } from "./mongodb";
 
+// Validate required environment variables
+if (!process.env.NEXTAUTH_SECRET && !process.env.AUTH_SECRET) {
+  throw new Error(
+    "NEXTAUTH_SECRET or AUTH_SECRET environment variable is required"
+  );
+}
+
 export const authOptions: NextAuthOptions = {
+  debug: process.env.NODE_ENV === "development",
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -77,5 +85,6 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/signin",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET,
+  // trustHost: true, // Required for deployment platforms like Vercel, Netlify, AWS Amplify
 };
