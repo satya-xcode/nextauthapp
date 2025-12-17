@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXTAUTH_URL: "https://main.d13koukf3fjuf0.amplifyapp.com",
     MONGODB_URI:
-      "mongodb+srv://satyaxcode_db_user:oXJkvi1teWGoZ5zm@tianyin-db.qvsj6a5.mongodb.net/?appName=tianyin-db",
+      "mongodb+srv://satyaxcode_db_user:WKkvu8lGUrDPkqsf@satyaxdb.jcixewm.mongodb.net/?appName=satyaxdb",
     AUTH_SECRET: "71fO2lkYpNaA1xq+/b98lpFLylzAbS++aPMH3rnBKYI=",
     NEXTAUTH_SECRET: "71fO2lkYpNaA1xq+/b98lpFLylzAbS++aPMH3rnBKYI=",
   },

@@ -14,13 +14,16 @@ export default function Navbar() {
             <Link href="/" className="text-xl font-bold text-gray-800">
               NextAuth App
             </Link>
-            
+
             {/* Public Links */}
             <div className="hidden md:flex space-x-4">
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-600 hover:text-gray-900">
+              <Link
+                href="/contact"
+                className="text-gray-600 hover:text-gray-900"
+              >
                 Contact
               </Link>
             </div>
@@ -40,7 +43,7 @@ export default function Navbar() {
                     Dashboard
                   </Link>
                 )}
-                
+
                 {session.user.role === "marketing" && (
                   <Link
                     href="/marketting"
@@ -63,12 +66,20 @@ export default function Navbar() {
                 </div>
               </>
             ) : (
-              <Link
-                href="/auth/signin"
-                className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
-              >
-                Sign In
-              </Link>
+              <div className="flex items-center space-x-2">
+                <Link
+                  href="/auth/signup"
+                  className="text-indigo-600 hover:text-indigo-800 px-3 py-2 rounded border border-indigo-600 hover:bg-indigo-50"
+                >
+                  Sign Up
+                </Link>
+                <Link
+                  href="/auth/signin"
+                  className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+                >
+                  Sign In
+                </Link>
+              </div>
             )}
           </div>
         </div>
